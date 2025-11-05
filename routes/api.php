@@ -55,3 +55,5 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/problems/{id}', [ProblemController::class, 'destroy']);
     });
 });
+
+

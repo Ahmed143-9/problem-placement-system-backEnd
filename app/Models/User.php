@@ -16,8 +16,8 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
-        'is_approved',
-        'is_active',
+        'department',
+        'status',
     ];
 
     protected $hidden = [
@@ -28,8 +28,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        'is_approved' => 'boolean',
-        'is_active' => 'boolean',
     ];
 
     // Check if user is admin
@@ -44,10 +42,10 @@ class User extends Authenticatable
         return $this->role === 'team_leader';
     }
 
-    // Check if user is team member
-    public function isTeamMember()
+    // Check if user is employee
+    public function isEmployee()
     {
-        return $this->role === 'team_member';
+        return $this->role === 'employee';
     }
 
     // Problems created by this user
